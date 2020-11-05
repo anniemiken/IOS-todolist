@@ -15,6 +15,7 @@
 		2ABD0916254C5721006724F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD0914254C5721006724F1 /* LaunchScreen.storyboard */; };
 		2ABD0921254C5721006724F1 /* IOS_todolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD0920254C5721006724F1 /* IOS_todolistTests.swift */; };
 		2ABD092C254C5721006724F1 /* IOS_todolistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD092B254C5721006724F1 /* IOS_todolistUITests.swift */; };
+		2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF490725544EFB0074BC5C /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2ABD0927254C5721006724F1 /* IOS-todolistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-todolistUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABD092B254C5721006724F1 /* IOS_todolistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_todolistUITests.swift; sourceTree = "<group>"; };
 		2ABD092D254C5721006724F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ABF490725544EFB0074BC5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2ABD0912254C5721006724F1 /* Assets.xcassets */,
 				2ABD0914254C5721006724F1 /* LaunchScreen.storyboard */,
 				2ABD0917254C5721006724F1 /* Info.plist */,
+				2ABF490725544EFB0074BC5C /* ListViewController.swift */,
 			);
 			path = "IOS-todolist";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				2ABD090E254C5720006724F1 /* ViewController.swift in Sources */,
 				2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */,
+				2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
