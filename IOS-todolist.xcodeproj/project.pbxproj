@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1C3BD0255463E600A4706A /* TodoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1C3BCF255463E600A4706A /* TodoViewCell.swift */; };
 		2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD0909254C5720006724F1 /* AppDelegate.swift */; };
 		2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD090B254C5720006724F1 /* SceneDelegate.swift */; };
 		2ABD090E254C5720006724F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD090D254C5720006724F1 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1C3BCF255463E600A4706A /* TodoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewCell.swift; sourceTree = "<group>"; };
 		2ABD0906254C5720006724F1 /* IOS-todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-todolist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABD0909254C5720006724F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ABD090B254C5720006724F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				2ABD0914254C5721006724F1 /* LaunchScreen.storyboard */,
 				2ABD0917254C5721006724F1 /* Info.plist */,
 				2ABF490725544EFB0074BC5C /* ListViewController.swift */,
+				2A1C3BCF255463E600A4706A /* TodoViewCell.swift */,
 			);
 			path = "IOS-todolist";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				2ABD090E254C5720006724F1 /* ViewController.swift in Sources */,
 				2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */,
+				2A1C3BD0255463E600A4706A /* TodoViewCell.swift in Sources */,
 				2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
 			);

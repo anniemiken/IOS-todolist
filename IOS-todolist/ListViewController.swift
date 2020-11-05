@@ -7,11 +7,26 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todocell", for: indexPath)
+        return cell
+    }
+    
+   
+    
+    @IBOutlet weak var todoListView: UITableView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        todoListView.delegate = self
+        todoListView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
