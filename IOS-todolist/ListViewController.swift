@@ -25,8 +25,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        todoListView.delegate = self
-        todoListView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
