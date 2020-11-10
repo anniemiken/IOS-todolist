@@ -7,27 +7,29 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todocell", for: indexPath)
-        return cell
-    }
-    
-   
-    
-    @IBOutlet weak var todoListView: UITableView!
-    
-    
-
+class ListViewController: UIViewController{
+ 
+    var tasks: [Task] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tasks.append(Task(name: "task object"))// Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView,  section: Int) -> Int{
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let  cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as!TaskCell
+        cell.taskNameLabel.text = tasks [indexPath.row].name
+        if tasks[indexPath.row].checked{
+             cell.checkBoxOutlet.setBackgroundImage(UIImage(named: "CHECKBOXFILLED.png") , for: .normal)
+        }else{
+            cell.checkBoxOutlet.setBackgroundImage(UIImage(named: "CHECKBOXFILLED.png") , for: .normal)
+            
+        }
+        return cell
+    }
 
     /*
     // MARK: - Navigation
@@ -39,4 +41,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     */
 
+}
+
+class Task{
+    var name = ""
+    var checked = false
+    
+    convenience init(name: String){
+        self.init()
+        self.name = name
+    }
 }

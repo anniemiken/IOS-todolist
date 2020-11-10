@@ -13,8 +13,8 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource,
     
     var models: [(title: String, note: String)] = []
     
-    @IBOutlet weak var listLabel: UILabel!
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var listLabel: UILabel! //says no lists
+    @IBOutlet weak var table: UITableView! //tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,15 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource,
             return
         }
         vc.title = "New List"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = {listLabel, note in self.models.append((title: listLabel, note: note))
+            self.navigationController?.popToRootViewController(animated: true)
+            self.table.isHidden = false
+            self.listLabel.isHidden=true
+            self.table.reloadData()
+        }
         navigationController?.pushViewController(vc, animated: true)
+        
 
     }
     
@@ -41,16 +49,17 @@ class ViewController: UIViewController, UITabBarDelegate, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = models[indexPath.row].note
+        cell.textLabel?.text = models[indexPath.row].title
+        cell.detailTextLabel?.text = models[indexPath.row].note
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         guard let vc = storyboard?.instantiateViewController(identifier: "note") as? ListViewController else{
             return
         }
+        vc.navigationItem.largeTitleDisplayMode = .never
         vc.title = "List"
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA1ECE7255AE50300232870 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1ECE6255AE50300232870 /* TaskCell.swift */; };
 		2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD0909254C5720006724F1 /* AppDelegate.swift */; };
 		2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD090B254C5720006724F1 /* SceneDelegate.swift */; };
 		2ABD0911254C5720006724F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD090F254C5720006724F1 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AA1ECE6255AE50300232870 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		2ABD0906254C5720006724F1 /* IOS-todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-todolist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABD0909254C5720006724F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ABD090B254C5720006724F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				2ABF490725544EFB0074BC5C /* ListViewController.swift */,
 				2ABDEE1E255965F5001AA5C8 /* ViewController.swift */,
 				2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */,
+				2AA1ECE6255AE50300232870 /* TaskCell.swift */,
 			);
 			path = "IOS-todolist";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */,
 				2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */,
 				2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */,
+				2AA1ECE7255AE50300232870 /* TaskCell.swift in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
