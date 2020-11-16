@@ -7,22 +7,31 @@
 
 import UIKit
 
-class NewListViewController: UIViewController {
-    @IBOutlet var titleField: UITextField!
-    @IBOutlet var listField: UITextView!
+class NewListViewController: UIViewController, UITextFieldDelegate {
     
-    public var completion: ((String, String) -> Void)?
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var bodyField: UITextField!
+    @IBOutlet var date: UIDatePicker!
+
+    public var completion:((String, String, Date)->Void)?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleField.becomeFirstResponder()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDone))
-        // Do any additional setup after loading the view.
+        nameField.delegate = self
+        bodyField.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(save))
     }
     
-    @objc func didTapDone(){
-        if let text = titleField.text, !text.isEmpty, !listField.text.isEmpty{
-            completion?(text, listField.text)
+    @objc func save(){
+        if let nameText = nameField.text, !nameText.isEmpty,
+           let bodyText = bodyField.text, !bodyText.isEmpty{
+            let datePick = date.date
+            completion?(nameText, bodyText, datePick)
         }
+        
     }
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

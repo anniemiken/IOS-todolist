@@ -9,10 +9,5 @@ import UIKit
 
 class TaskCell: UITableViewCell {
 
-    @IBOutlet weak var checkBoxOutlet: UIButton!
-    
-    @IBAction func checkBoxAction(_ sender: Any) {
-    }
-    @IBOutlet weak var taskNameLabel: UILabel!
     
 }
