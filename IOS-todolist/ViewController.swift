@@ -6,6 +6,7 @@
 //
 import UserNotifications
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     @IBOutlet var table: UITableView!
@@ -34,9 +35,12 @@ class ViewController: UIViewController {
         })
         
     }
+    
+
    
     @IBAction func addNewListByButton(_ sender: Any) {
         guard let viewControl = storyboard?.instantiateViewController(identifier: "add") as? NewListViewController else{
+
             return
         }
         viewControl.title = "New list"
@@ -47,7 +51,6 @@ class ViewController: UIViewController {
                 let new = lists(name: title, date: date, identifier: "id_\(title)")
                 self.models.append(new)
                 self.table.reloadData()
-                
                 let notification = UNMutableNotificationContent()
                 notification.title = title
                 notification.sound = .default
@@ -77,9 +80,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = storyboard?.instantiateViewController(identifier: "tasks") as! taskViewController
+        vc.title = models[indexPath.row].name
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+
+
 
 extension ViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
