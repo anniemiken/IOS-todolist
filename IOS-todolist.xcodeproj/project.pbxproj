@@ -20,6 +20,8 @@
 		2ABDEE1F255965F5001AA5C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDEE1E255965F5001AA5C8 /* ViewController.swift */; };
 		2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */; };
 		2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF490725544EFB0074BC5C /* ListViewController.swift */; };
+		2AD22E9425667BD600BA2C7A /* Lists+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD22E9225667BD600BA2C7A /* Lists+CoreDataClass.swift */; };
+		2AD22E9525667BD600BA2C7A /* Lists+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD22E9325667BD600BA2C7A /* Lists+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		2ABDEE1E255965F5001AA5C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		2ABF490725544EFB0074BC5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2AD22E9225667BD600BA2C7A /* Lists+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2AD22E9325667BD600BA2C7A /* Lists+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		2ABD0908254C5720006724F1 /* IOS-todolist */ = {
 			isa = PBXGroup;
 			children = (
+				2AD22E9225667BD600BA2C7A /* Lists+CoreDataClass.swift */,
+				2AD22E9325667BD600BA2C7A /* Lists+CoreDataProperties.swift */,
 				2ABD0909254C5720006724F1 /* AppDelegate.swift */,
 				2ABD090B254C5720006724F1 /* SceneDelegate.swift */,
 				2ABD090F254C5720006724F1 /* Main.storyboard */,
@@ -280,6 +286,8 @@
 				2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */,
 				2A170CF62565403E00881A09 /* IOS-list.xcdatamodeld in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
+				2AD22E9525667BD600BA2C7A /* Lists+CoreDataProperties.swift in Sources */,
+				2AD22E9425667BD600BA2C7A /* Lists+CoreDataClass.swift in Sources */,
 				2A170D5F2565849600881A09 /* todoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

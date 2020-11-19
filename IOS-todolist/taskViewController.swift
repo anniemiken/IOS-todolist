@@ -10,9 +10,7 @@ import UIKit
 class taskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 
-    @IBOutlet weak var todoImageView: NSLayoutConstraint!
     @IBOutlet weak var tdoTableView: UITableView!
-    @IBOutlet weak var todoLabel: UILabel!
     @IBAction func addNewTask(_ sender: Any) {
       
     }
@@ -28,12 +26,14 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellTask = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
-        return cellTask
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! todoCell
+        
+        
+        return cell
     }
     
     

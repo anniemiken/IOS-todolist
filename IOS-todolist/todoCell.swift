@@ -9,6 +9,8 @@ import UIKit
 
 class todoCell: UITableViewCell {
 
+    @IBOutlet weak var todoLabel: UILabel!
+    @IBOutlet weak var todoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
