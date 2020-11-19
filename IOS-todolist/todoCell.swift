@@ -11,6 +11,7 @@ class todoCell: UITableViewCell {
 
     @IBOutlet weak var todoLabel: UILabel!
     @IBOutlet weak var todoImage: UIImageView!
+    var isChecked = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

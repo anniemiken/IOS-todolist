@@ -40,7 +40,7 @@ class ViewController: UIViewController {
    
     @IBAction func addNewListByButton(_ sender: Any) {
         guard let viewControl = storyboard?.instantiateViewController(identifier: "add") as? NewListViewController else{
-
+            saveLists()
             return
         }
         viewControl.title = "New list"
@@ -87,6 +87,15 @@ extension ViewController: UITableViewDelegate{
 }
 
 
+private func saveLists(){
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedObjectContext = appDelegate.persistentContainer.viewContext
+    let lists = NSEntityDescription.insertNewObject(forEntityName: "Lists", into: managedObjectContext) as? Lists
+    lists?.name = String()
+    lists?.date = Date()
+    lists?.identifier = String()
+    appDelegate.saveContext()
+}
 
 
 extension ViewController: UITableViewDataSource{
@@ -114,7 +123,7 @@ extension ViewController: UITableViewDataSource{
         } 
     }
     
-
+   
 }
 
 struct lists{
