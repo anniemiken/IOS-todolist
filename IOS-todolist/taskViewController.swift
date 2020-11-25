@@ -15,8 +15,8 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let todoTask = UIAlertController(title: "Add Todo", message: "Add a new task", preferredStyle: .alert)
         todoTask.addTextField()
         let addTodoAction = UIAlertAction(title: "Add", style: .default){ (action) in
-            let newTask = todoTask.textFields![0]
-            self.model.append(newTask.text!)
+            //let newTask = todoTask.textFields![0]
+            //self.tasks.append(newTask.text)
             self.tdoTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default)
@@ -24,11 +24,14 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         todoTask.addAction(addTodoAction)
         present(todoTask, animated: true, completion: nil)
     }
-    var model: [String] = ["Get groceries"]
-    
-    
+    var tasks = [Tasks]()
+    var task: Tasks?
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchTodoData{
+            print("Success")
+        }
+        
         tdoTableView.delegate = self
         tdoTableView.dataSource = self
         tdoTableView.rowHeight = 50
@@ -37,12 +40,12 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! todoCell
-        cell.todoLabel.text = model[indexPath.row]
+        cell.todoLabel?.text = tasks[indexPath.row].title
         
         return cell
     }
@@ -57,18 +60,39 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.todoImage.image = nil
             cell.isChecked = false
         }
+        performSegue(withIdentifier: "cellList", sender: self)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            model.remove(at: indexPath.row)
+            tasks.remove(at: indexPath.row)
             tdoTableView.reloadData()
         }
     }
+  
     
+  
+    func fetchTodoData(completed: @escaping () -> ()){
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/todos") else { return }
+        URLSession.shared.dataTask(with: url){ (data, response, error) in
+            if error == nil{
+                do{
+                    self.tasks = try JSONDecoder().decode([Tasks].self, from: data!)
+                    
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                }catch{
+                    print("Json error")
+                }
+            }
+        }
+        
+    }
     
+   
 
-    
+
    
     
 

@@ -13,7 +13,7 @@ class NewListViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var bodyField: UITextField!
     @IBOutlet var date: UIDatePicker!
-
+  private let listsDatabaseManager = ListsDatabaseManager()
     public var completion:((String, String, Date)->Void)?
         
     override func viewDidLoad() {

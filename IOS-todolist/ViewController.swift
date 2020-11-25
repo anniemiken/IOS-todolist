@@ -9,8 +9,9 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-    @IBOutlet var table: UITableView!
     
+    @IBOutlet var table: UITableView!
+   //private let listData
     var models = [lists]()
     
     override func viewDidLoad() {
