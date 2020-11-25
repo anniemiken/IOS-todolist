@@ -9,7 +9,7 @@ import UIKit
 
 class ListViewController: UIViewController{
     
-    var task: String?
+    //var task: String?
     override func viewDidLoad() {
 
     }

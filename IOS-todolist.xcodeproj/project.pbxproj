@@ -22,6 +22,10 @@
 		2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF490725544EFB0074BC5C /* ListViewController.swift */; };
 		2AD22E9425667BD600BA2C7A /* Lists+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD22E9225667BD600BA2C7A /* Lists+CoreDataClass.swift */; };
 		2AD22E9525667BD600BA2C7A /* Lists+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD22E9325667BD600BA2C7A /* Lists+CoreDataProperties.swift */; };
+		AA84D054256E584000C97988 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84D053256E584000C97988 /* DatabaseManager.swift */; };
+		AA84D059256E591600C97988 /* ListsDatabaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84D058256E591600C97988 /* ListsDatabaseManger.swift */; };
+		AA84D05E256E5AA600C97988 /* TodoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84D05D256E5AA600C97988 /* TodoesTableViewController.swift */; };
+		AA84D06B256E63E000C97988 /* Tasks1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84D06A256E63E000C97988 /* Tasks1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		2ABF490725544EFB0074BC5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2AD22E9225667BD600BA2C7A /* Lists+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2AD22E9325667BD600BA2C7A /* Lists+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA84D053256E584000C97988 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AA84D058256E591600C97988 /* ListsDatabaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsDatabaseManger.swift; sourceTree = "<group>"; };
+		AA84D05D256E5AA600C97988 /* TodoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoesTableViewController.swift; sourceTree = "<group>"; };
+		AA84D06A256E63E000C97988 /* Tasks1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,10 @@
 				2A170CF42565403E00881A09 /* IOS-list.xcdatamodeld */,
 				2A170D5925657D2500881A09 /* taskViewController.swift */,
 				2A170D5E2565849600881A09 /* todoCell.swift */,
+				AA84D053256E584000C97988 /* DatabaseManager.swift */,
+				AA84D058256E591600C97988 /* ListsDatabaseManger.swift */,
+				AA84D05D256E5AA600C97988 /* TodoesTableViewController.swift */,
+				AA84D06A256E63E000C97988 /* Tasks1.swift */,
 			);
 			path = "IOS-todolist";
 			sourceTree = "<group>";
@@ -280,12 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ABDEE1F255965F5001AA5C8 /* ViewController.swift in Sources */,
+				AA84D054256E584000C97988 /* DatabaseManager.swift in Sources */,
 				2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */,
 				2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */,
 				2A170D5A25657D2500881A09 /* taskViewController.swift in Sources */,
 				2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */,
+				AA84D059256E591600C97988 /* ListsDatabaseManger.swift in Sources */,
 				2A170CF62565403E00881A09 /* IOS-list.xcdatamodeld in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
+				AA84D06B256E63E000C97988 /* Tasks1.swift in Sources */,
+				AA84D05E256E5AA600C97988 /* TodoesTableViewController.swift in Sources */,
 				2AD22E9525667BD600BA2C7A /* Lists+CoreDataProperties.swift in Sources */,
 				2AD22E9425667BD600BA2C7A /* Lists+CoreDataClass.swift in Sources */,
 				2A170D5F2565849600881A09 /* todoCell.swift in Sources */,

@@ -8,7 +8,6 @@
 import UIKit
 
 class taskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
 
     @IBOutlet weak var tdoTableView: UITableView!
     @IBAction func addNewTask(_ sender: Any){
@@ -24,28 +23,31 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         todoTask.addAction(addTodoAction)
         present(todoTask, animated: true, completion: nil)
     }
-    var tasks = [Tasks]()
-    var task: Tasks?
+    
+    private var task = [Tasks]()
     override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchTodoData{
-            print("Success")
-        }
         
+        super.viewDidLoad()
         tdoTableView.delegate = self
         tdoTableView.dataSource = self
         tdoTableView.rowHeight = 50
+        fetchTodoData()
+
         // Do any additional setup after loading the view.
     }
     
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return task.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! todoCell
-        cell.todoLabel?.text = tasks[indexPath.row].title
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as? todoCell else{ return UITableViewCell()
+            
+        }
+        print(self.task)
+        cell.todoLabel.text = task[indexPath.row].title
         
         return cell
     }
@@ -60,32 +62,46 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.todoImage.image = nil
             cell.isChecked = false
         }
-        performSegue(withIdentifier: "cellList", sender: self)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            tasks.remove(at: indexPath.row)
+            task.remove(at: indexPath.row)
             tdoTableView.reloadData()
         }
     }
   
     
   
-    func fetchTodoData(completed: @escaping () -> ()){
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/todos") else { return }
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
-            if error == nil{
-                do{
-                    self.tasks = try JSONDecoder().decode([Tasks].self, from: data!)
-                    
-                    DispatchQueue.main.async {
-                        completed()
-                    }
-                }catch{
-                    print("Json error")
-                }
+    private func fetchTodoData(){
+        guard let downloadURL = URL(string: "https://jsonplaceholder.typicode.com/todos") else{
+            return
+        }
+    
+        URLSession.shared.dataTask(with: downloadURL) {data, URLResponse, error in
+            print("Downloaded")
+            guard let data = data, error == nil, URLResponse != nil else{
+                print("something is wrong")
+                return
             }
+            
+        
+            do{
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let tasksdown = try decoder.decode(Task.self, from: data)
+               
+                self.task = tasksdown.tasks
+                DispatchQueue.main.async {
+                    self.tdoTableView.reloadData()
+                }
+                
+            }catch{
+
+                print("Something wrong after downloading")
+            }
+        }.resume()
+            
         }
         
     }
@@ -106,8 +122,6 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     */
 
-}
 
-struct task{
-    let name: String
-}
+
+
