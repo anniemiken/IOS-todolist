@@ -8,7 +8,10 @@
 import Foundation
 import CoreData
 
-class ListsDatabaseManager {
-    
+class ListsDatabaseManager: NSManagedObject {
+    @NSManaged public var date: Date?
+    @NSManaged public var identifier: String?
+    @NSManaged public var name: String?
+
    
 }

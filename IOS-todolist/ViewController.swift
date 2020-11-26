@@ -8,7 +8,8 @@ import UserNotifications
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+
     
     @IBOutlet var table: UITableView!
    //private let listData
@@ -123,6 +124,8 @@ extension ViewController: UITableViewDataSource{
             tableView.deleteRows(at: [indexPath], with: .fade)
         } 
     }
+    
+
     
    
 }

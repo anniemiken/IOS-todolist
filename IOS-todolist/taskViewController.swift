@@ -14,8 +14,9 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let todoTask = UIAlertController(title: "Add Todo", message: "Add a new task", preferredStyle: .alert)
         todoTask.addTextField()
         let addTodoAction = UIAlertAction(title: "Add", style: .default){ (action) in
+            let newTask = Tasks(userId: 6000, id: 0, title: todoTask.textFields![0].text!, completed: false)
             //let newTask = todoTask.textFields![0]
-            //self.tasks.append(newTask.text)
+            self.task.append(newTask)
             self.tdoTableView.reloadData()
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default)
@@ -38,7 +39,7 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return task.count
+        return task.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,15 +90,16 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
             do{
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let tasksdown = try decoder.decode(Task.self, from: data)
-               
-                self.task = tasksdown.tasks
+                let tasksdown = try decoder.decode([Tasks].self, from: data)
+                print(tasksdown)
+                
+                self.task = tasksdown
                 DispatchQueue.main.async {
                     self.tdoTableView.reloadData()
                 }
                 
             }catch{
-
+                print(error)
                 print("Something wrong after downloading")
             }
         }.resume()
