@@ -103,8 +103,6 @@
 		2ABD08FD254C5720006724F1 = {
 			isa = PBXGroup;
 			children = (
-				AA4C770E25714F380005E63E /* Lists+CoreDataClass.swift */,
-				AA4C770F25714F380005E63E /* Lists+CoreDataProperties.swift */,
 				2ABD0908254C5720006724F1 /* IOS-todolist */,
 				2ABD091F254C5721006724F1 /* IOS-todolistTests */,
 				2ABD092A254C5721006724F1 /* IOS-todolistUITests */,
@@ -125,6 +123,8 @@
 		2ABD0908254C5720006724F1 /* IOS-todolist */ = {
 			isa = PBXGroup;
 			children = (
+				AA4C770E25714F380005E63E /* Lists+CoreDataClass.swift */,
+				AA4C770F25714F380005E63E /* Lists+CoreDataProperties.swift */,
 				2ABD0909254C5720006724F1 /* AppDelegate.swift */,
 				2ABD090B254C5720006724F1 /* SceneDelegate.swift */,
 				2ABD090F254C5720006724F1 /* Main.storyboard */,
