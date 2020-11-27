@@ -31,11 +31,12 @@ class taskViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tdoTableView.delegate = self
         tdoTableView.dataSource = self
-        tdoTableView.rowHeight = 50
         fetchTodoData()
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

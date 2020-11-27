@@ -2,7 +2,7 @@
 //  Lists+CoreDataClass.swift
 //  IOS-todolist
 //
-//  Created by Annie Johansson on 2020-11-19.
+//  Created by Bahja Faqid on 2020-11-27.
 //
 //
 

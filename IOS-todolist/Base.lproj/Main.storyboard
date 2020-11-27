@@ -8,6 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Map Screen-->
+        <scene sceneID="QDI-58-lKC">
+            <objects>
+                <viewController storyboardIdentifier="map" id="NSD-Zt-LuX" customClass="MapScreen" customModule="IOS_todolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2i-H8-U13">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Gw-HU-Zie">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lPu-Xk-kdO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lPu-Xk-kdO" firstAttribute="trailing" secondItem="3Gw-HU-Zie" secondAttribute="trailing" id="26d-QO-cha"/>
+                            <constraint firstItem="lPu-Xk-kdO" firstAttribute="bottom" secondItem="3Gw-HU-Zie" secondAttribute="bottom" id="QOv-JL-AYV"/>
+                            <constraint firstItem="3Gw-HU-Zie" firstAttribute="leading" secondItem="lPu-Xk-kdO" secondAttribute="leading" id="gts-e8-Dzx"/>
+                            <constraint firstItem="3Gw-HU-Zie" firstAttribute="top" secondItem="lPu-Xk-kdO" secondAttribute="top" id="ldT-wS-nyD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="3Gw-HU-Zie" id="t1x-xS-vmD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMp-h8-aos" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1452.1739130434785" y="-1084.1517857142856"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QxM-at-NfM">
             <objects>
@@ -43,7 +72,7 @@
                         <viewLayoutGuide key="safeArea" id="TTY-xm-EIY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="Xwo-cp-mqb"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="Xwo-cp-mqb"/>
                     <navigationItem key="navigationItem" id="PDt-WF-jy9"/>
                     <connections>
                         <outlet property="mainScrollView" destination="bwK-NH-NiJ" id="ytg-dU-wmC"/>
@@ -102,7 +131,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lists" id="647-6D-kOw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="a5K-wd-Ch6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="location.fill" catalog="system" id="a5K-wd-Ch6">
+                            <connections>
+                                <action selector="viewMap:" destination="oah-u8-czS" id="ofM-Au-XjM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vf4-ui-tBU">
                             <connections>
                                 <action selector="addNewListByButton:" destination="oah-u8-czS" id="M6O-ag-oFC"/>
@@ -195,9 +228,9 @@
                                                         <constraint firstAttribute="width" constant="42" id="nSJ-HG-kCt"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="todoLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-Wx-xoU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="todoLabel" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-Wx-xoU">
                                                     <rect key="frame" x="61" y="11" width="313" height="40"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -247,7 +280,7 @@
         <scene sceneID="wFP-ik-cKy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NMf-aw-Fz9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lists" id="CUk-aC-DOo"/>
+                    <tabBarItem key="tabBarItem" title="Lists" image="list.bullet" catalog="system" id="CUk-aC-DOo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="JY2-HP-kTV">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -282,6 +315,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

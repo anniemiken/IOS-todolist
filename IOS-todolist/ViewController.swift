@@ -39,7 +39,15 @@ class ViewController: UIViewController{
     }
     
 
-   
+    @IBAction func viewMap(_ sender: Any) {
+        guard let control = storyboard?.instantiateViewController(identifier: "map") as? MapScreen else{
+            return
+        }
+        control.title = "Map"
+        control.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(control, animated: true)
+    }
+    
     @IBAction func addNewListByButton(_ sender: Any) {
         guard let viewControl = storyboard?.instantiateViewController(identifier: "add") as? NewListViewController else{
             saveLists()
