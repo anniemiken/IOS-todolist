@@ -27,7 +27,7 @@ class MapScreen: UIViewController{
     
     func centerViewOnUserLocation(){
         if let loc = locationManager.location?.coordinate{
-            let reg = MKCoordinateRegion.init(center: loc, latitudinalMeters: 100, longitudinalMeters: 100)
+            let reg = MKCoordinateRegion.init(center: loc, latitudinalMeters: 1000, longitudinalMeters: 1000)
             mapView.setRegion(reg, animated: true)
         }
     }
@@ -66,7 +66,7 @@ extension MapScreen: CLLocationManagerDelegate{
         guard let location = locations.last else{return}
         locationManager.stopUpdatingLocation()
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let reg = MKCoordinateRegion.init(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
+        let reg = MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setRegion(reg, animated: true)
     }
     
