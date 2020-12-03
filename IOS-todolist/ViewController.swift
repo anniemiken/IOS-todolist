@@ -13,11 +13,28 @@ class ViewController: UIViewController{
     
     @IBOutlet var table: UITableView!
    //private let listData
-    var models = [lists]()
+    var lists = [Lists]()
     
     override func viewDidLoad() {
         table.delegate = self
         table.dataSource = self
+        requestUserData()
+    }
+    
+    func requestUserData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "Lists")
+        req.returnsObjectsAsFaults = false
+        do{
+            let results = try context.fetch(req)
+            for data in results as! [NSManagedObject]{
+                lists.append(data as! Lists)
+                table.reloadData()
+            }
+        }catch{
+            print("fail")
+        }
     }
    
     func scheduleTest(){
@@ -50,7 +67,6 @@ class ViewController: UIViewController{
     
     @IBAction func addNewListByButton(_ sender: Any) {
         guard let viewControl = storyboard?.instantiateViewController(identifier: "add") as? NewListViewController else{
-            saveLists()
             return
         }
         viewControl.title = "New list"
@@ -58,8 +74,6 @@ class ViewController: UIViewController{
         viewControl.completion = {title, body, date in
             DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = lists(name: title, date: date, identifier: "id_\(title)")
-                self.models.append(new)
                 self.table.reloadData()
                 let notification = UNMutableNotificationContent()
                 notification.title = title
@@ -91,21 +105,12 @@ class ViewController: UIViewController{
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "tasks") as! taskViewController
-        vc.title = models[indexPath.row].name
+        vc.title = lists[indexPath.row].name
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 
-private func saveLists(){
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let managedObjectContext = appDelegate.persistentContainer.viewContext
-    let lists = NSEntityDescription.insertNewObject(forEntityName: "Lists", into: managedObjectContext) as? Lists
-    lists?.name = String()
-    lists?.date = Date()
-    lists?.identifier = String()
-    appDelegate.saveContext()
-}
 
 
 extension ViewController: UITableViewDataSource{
@@ -114,21 +119,21 @@ extension ViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return lists.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = models[indexPath.row].name
-        let date = models[indexPath.row].date
+        cell.textLabel?.text = lists[indexPath.row].name
+        let date = lists[indexPath.row].date
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM, dd, YYYY"
-        cell.detailTextLabel?.text = formatter.string(from: date)
+        cell.detailTextLabel?.text = "hej"
         return cell
     }
-    
+
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            models.remove(at: indexPath.row)
+            lists.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } 
     }
@@ -138,11 +143,6 @@ extension ViewController: UITableViewDataSource{
    
 }
 
-struct lists{
-    let name: String
-    let date: Date
-    let identifier: String
-}
 
     /*
     // MARK: - Navigation

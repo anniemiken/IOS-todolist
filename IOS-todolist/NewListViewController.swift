@@ -25,22 +25,24 @@ class NewListViewController: UIViewController, UITextFieldDelegate {
 
     
     @objc func save(){
-        if let nameText = nameField.text, !nameText.isEmpty,
-           let bodyText = bodyField.text, !bodyText.isEmpty{
-            let datePick = date.date
-            completion?(nameText, bodyText, datePick)
-        }
-        /*
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        if let newItem = NSEntityDescription.insertNewObject(forEntityName: "Lists", into: context) as? Lists{
-            newItem.name = nameField.text!
-            newItem.date = date.date
-            newItem.identifier = bodyField.text!
-            appDelegate.saveContext()
+        let list = NSEntityDescription.entity(forEntityName: "Lists", in: context)
+        let newList = NSManagedObject(entity: list!, insertInto: context)
+        newList.setValue(nameField.text, forKey: "name")
+        newList.setValue(bodyField.text, forKey: "identifier")
+        newList.setValue(date.date, forKey: "date")
+        do{
+            try context.save()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }catch{
+            print("Failed to save data")
+        }
  
- }
- */
+ 
+ 
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

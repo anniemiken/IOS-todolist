@@ -85,7 +85,7 @@
         <!--Lists-->
         <scene sceneID="c3t-xQ-qAY">
             <objects>
-                <viewController id="oah-u8-czS" customClass="ViewController" customModule="IOS_todolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="oah-u8-czS" customClass="ViewController" customModule="IOS_todolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d7V-qn-eb6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xL-GY-L3F">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="name" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xL-GY-L3F">
                                 <rect key="frame" x="20" y="64" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="unq-S1-txv"/>
@@ -166,7 +166,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notification:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J19-jD-V0N">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="body" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notification:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J19-jD-V0N">
                                 <rect key="frame" x="20" y="154" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="n0X-Xx-3ar"/>
@@ -174,7 +174,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fGl-Y2-7hl">
+                            <datePicker contentMode="scaleToFill" restorationIdentifier="date" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fGl-Y2-7hl">
                                 <rect key="frame" x="10" y="214" width="394" height="216"/>
                             </datePicker>
                         </subviews>
@@ -215,33 +215,29 @@
                                 <rect key="frame" x="0.0" y="88" width="408" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="todoCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" rowHeight="62" id="c85-xq-z2U" customClass="todoCell" customModule="IOS_todolist" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" restorationIdentifier="todoCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" rowHeight="62" id="c85-xq-z2U" customClass="todoCell" customModule="IOS_todolist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="408" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c85-xq-z2U" id="jCw-Bd-Yx0">
                                             <rect key="frame" x="0.0" y="0.0" width="408" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-Xe-4Qc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="todoLabel" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-Wx-xoU">
+                                                    <rect key="frame" x="61" y="11" width="307" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-Xe-4Qc">
                                                     <rect key="frame" x="11" y="11" width="42" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="nSJ-HG-kCt"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="todoLabel" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-Wx-xoU">
-                                                    <rect key="frame" x="61" y="11" width="313" height="40"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="bottom" secondItem="jCw-Bd-Yx0" secondAttribute="bottomMargin" id="9x8-1a-JHZ"/>
-                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="leading" secondItem="jCw-Bd-Yx0" secondAttribute="leadingMargin" id="M9x-iy-o0H"/>
-                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="top" secondItem="jCw-Bd-Yx0" secondAttribute="topMargin" id="Npo-cO-dXl"/>
-                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="bottom" secondItem="mAZ-Wx-xoU" secondAttribute="bottom" id="cBX-Fx-xh0"/>
-                                                <constraint firstItem="mAZ-Wx-xoU" firstAttribute="leading" secondItem="MOK-Xe-4Qc" secondAttribute="trailing" constant="57" id="gIf-nZ-lTu"/>
-                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="top" secondItem="mAZ-Wx-xoU" secondAttribute="top" id="wyf-hN-aRn"/>
+                                                <constraint firstItem="MOK-Xe-4Qc" firstAttribute="centerY" secondItem="jCw-Bd-Yx0" secondAttribute="centerY" id="nul-HK-uIM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
