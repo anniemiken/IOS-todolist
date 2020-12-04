@@ -48,11 +48,54 @@
                     <connections>
                         <segue destination="NMf-aw-Fz9" kind="relationship" relationship="viewControllers" id="oDm-1f-1ZJ"/>
                         <segue destination="xR0-ef-QVs" kind="relationship" relationship="viewControllers" id="SL1-IT-fFN"/>
+                        <segue destination="hpV-6u-m3l" kind="relationship" relationship="viewControllers" id="xvx-ni-rL4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVm-S2-TRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2178" y="-109"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="npp-FC-crx">
+            <objects>
+                <viewController id="hpV-6u-m3l" customClass="CameraViewController" customModule="IOS_todolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kku-eN-Q6N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-WU-pGU">
+                                <rect key="frame" x="169" y="629" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save photo"/>
+                                <connections>
+                                    <action selector="SavePhoto:" destination="hpV-6u-m3l" eventType="touchUpInside" id="u2c-k7-gGh"/>
+                                    <action selector="savePhoto:" destination="hpV-6u-m3l" eventType="touchUpInside" id="zU4-4l-Fek"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CS2-b4-9GJ">
+                                <rect key="frame" x="0.0" y="70" width="414" height="464"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G98-hl-rkK">
+                                <rect key="frame" x="170" y="572" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="hpV-6u-m3l" eventType="touchUpInside" id="eXb-rT-bhf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="91W-lX-WrZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera.fill" catalog="system" id="Xwf-t0-RaB"/>
+                    <connections>
+                        <outlet property="image" destination="CS2-b4-9GJ" id="Jdz-aw-UxY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GFG-J2-8Ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1268.1159420289855" y="-60.267857142857139"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="mKL-mc-iLS">
@@ -80,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yn-v2-DeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3837.68115942029" y="555.80357142857144"/>
+            <point key="canvasLocation" x="1699" y="706"/>
         </scene>
         <!--Lists-->
         <scene sceneID="c3t-xQ-qAY">
@@ -313,6 +356,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

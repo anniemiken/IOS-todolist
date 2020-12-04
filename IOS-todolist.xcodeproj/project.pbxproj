@@ -10,6 +10,7 @@
 		2A170CF62565403E00881A09 /* IOS-list.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A170CF42565403E00881A09 /* IOS-list.xcdatamodeld */; };
 		2A170D5A25657D2500881A09 /* taskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A170D5925657D2500881A09 /* taskViewController.swift */; };
 		2A170D5F2565849600881A09 /* todoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A170D5E2565849600881A09 /* todoCell.swift */; };
+		2A71A083257A64A70073902A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71A082257A64A70073902A /* CameraViewController.swift */; };
 		2AA313D5256FA0AA008EC0A6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA313D4256FA0AA008EC0A6 /* CalendarViewController.swift */; };
 		2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD0909254C5720006724F1 /* AppDelegate.swift */; };
 		2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD090B254C5720006724F1 /* SceneDelegate.swift */; };
@@ -20,7 +21,6 @@
 		2ABD092C254C5721006724F1 /* IOS_todolistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD092B254C5721006724F1 /* IOS_todolistUITests.swift */; };
 		2ABDEE1F255965F5001AA5C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDEE1E255965F5001AA5C8 /* ViewController.swift */; };
 		2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */; };
-		2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF490725544EFB0074BC5C /* ListViewController.swift */; };
 		AA4C76DE257115A60005E63E /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C76DD257115A60005E63E /* MapScreen.swift */; };
 		AA4C771025714F380005E63E /* Lists+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C770E25714F380005E63E /* Lists+CoreDataClass.swift */; };
 		AA4C771125714F380005E63E /* Lists+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C770F25714F380005E63E /* Lists+CoreDataProperties.swift */; };
@@ -50,6 +50,7 @@
 		2A170CF52565403E00881A09 /* IOS-list.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "IOS-list.xcdatamodel"; sourceTree = "<group>"; };
 		2A170D5925657D2500881A09 /* taskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskViewController.swift; sourceTree = "<group>"; };
 		2A170D5E2565849600881A09 /* todoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoCell.swift; sourceTree = "<group>"; };
+		2A71A082257A64A70073902A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		2AA313D4256FA0AA008EC0A6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2ABD0906254C5720006724F1 /* IOS-todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-todolist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABD0909254C5720006724F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		2ABD092D254C5721006724F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ABDEE1E255965F5001AA5C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
-		2ABF490725544EFB0074BC5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AA4C76DD257115A60005E63E /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 		AA4C770E25714F380005E63E /* Lists+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA4C770F25714F380005E63E /* Lists+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				2ABD0912254C5721006724F1 /* Assets.xcassets */,
 				2ABD0914254C5721006724F1 /* LaunchScreen.storyboard */,
 				2ABD0917254C5721006724F1 /* Info.plist */,
-				2ABF490725544EFB0074BC5C /* ListViewController.swift */,
 				2ABDEE1E255965F5001AA5C8 /* ViewController.swift */,
 				2ABDEE2E25596EEB001AA5C8 /* NewListViewController.swift */,
 				2A170CF42565403E00881A09 /* IOS-list.xcdatamodeld */,
@@ -142,6 +141,7 @@
 				AA84D06A256E63E000C97988 /* Tasks1.swift */,
 				2AA313D4256FA0AA008EC0A6 /* CalendarViewController.swift */,
 				AA4C76DD257115A60005E63E /* MapScreen.swift */,
+				2A71A082257A64A70073902A /* CameraViewController.swift */,
 			);
 			path = "IOS-todolist";
 			sourceTree = "<group>";
@@ -299,13 +299,13 @@
 				AA4C771125714F380005E63E /* Lists+CoreDataProperties.swift in Sources */,
 				AA84D054256E584000C97988 /* DatabaseManager.swift in Sources */,
 				2ABD090A254C5720006724F1 /* AppDelegate.swift in Sources */,
-				2ABF490825544EFB0074BC5C /* ListViewController.swift in Sources */,
 				2A170D5A25657D2500881A09 /* taskViewController.swift in Sources */,
 				2ABDEE2F25596EEB001AA5C8 /* NewListViewController.swift in Sources */,
 				AA84D059256E591600C97988 /* ListsDatabaseManger.swift in Sources */,
 				AA4C76DE257115A60005E63E /* MapScreen.swift in Sources */,
 				2A170CF62565403E00881A09 /* IOS-list.xcdatamodeld in Sources */,
 				2ABD090C254C5720006724F1 /* SceneDelegate.swift in Sources */,
+				2A71A083257A64A70073902A /* CameraViewController.swift in Sources */,
 				AA84D06B256E63E000C97988 /* Tasks1.swift in Sources */,
 				2A170D5F2565849600881A09 /* todoCell.swift in Sources */,
 				AA4C771025714F380005E63E /* Lists+CoreDataClass.swift in Sources */,
