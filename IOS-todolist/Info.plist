@@ -6,6 +6,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This is why we need your location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Used to take and save photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to access photos</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -16,6 +16,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate & 
         // Do any additional setup after loading the view.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     @IBAction func takePhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
@@ -40,7 +44,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate & 
         let compressImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressImage!, nil, nil, nil)
         let alertNotation = UIAlertController(title: "Saved", message: "Your image has now been saved", preferredStyle: .alert)
-        let action = UIAlertAction(title: "I understand", style: .default, handler: nil)
+        let action = UIAlertAction(title:  "I understand", style: .default, handler: nil)
         alertNotation.addAction(action)
         self.present(alertNotation, animated: true, completion: nil)
     }
